@@ -20,7 +20,7 @@ export default function Header() {
   };
 
   const gotosomewhere = () => {
-    window.open("http://localhost:3001/resume");
+    window.open("https://intellihire-nine.vercel.app/resume");
   };
 
   const [isOpen, setIsOpen] = useState(false);
@@ -37,7 +37,7 @@ export default function Header() {
             className="hidden md:inline-flex items-center gap-2 mx-5"
           >
             <Link
-              href="http://localhost:3001/dashboard"
+              href="https://intellihire-nine.vercel.app/dashboard"
               className="flex items-center gap-2"
             >
               <LayoutDashboard className="h-4 w-4" />
@@ -73,7 +73,7 @@ export default function Header() {
                   className="px-4 py-2 hover:bg-indigo-800 cursor-pointer"
                 >
                   <Link
-                    href="http://localhost:3001/resume"
+                    href="https://intellihire-nine.vercel.app/resume"
                     className="flex items-center gap-2"
                   >
                     <FileText className="h-4 w-4" />
@@ -82,7 +82,7 @@ export default function Header() {
                 </li>
                 <li className="px-4 py-2 hover:bg-indigo-800 cursor-pointer">
                   <Link
-                    href="http://localhost:3001/ai-cover-letter"
+                    href="https://intellihire-nine.vercel.app/ai-cover-letter"
                     className="flex items-center gap-2"
                   >
                     <PenBox className="h-4 w-4" />
@@ -91,7 +91,7 @@ export default function Header() {
                 </li>
                 <li className="px-4 py-2 hover:bg-indigo-800 cursor-pointer">
                   <Link
-                    href="http://localhost:3001/interview"
+                    href="https://intellihire-nine.vercel.app/interview"
                     className="flex items-center gap-2"
                   >
                     <GraduationCap className="h-4 w-4" />
