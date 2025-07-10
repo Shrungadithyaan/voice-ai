@@ -36,12 +36,12 @@ export default function Header() {
 
         {/* Dropdown Button */}
         <div>
-          <button
+          {/* <button
             onClick={toggleDropdown}
             className="bg-gray-500 text-primary-foreground shadow p-2 rounded-md flex items-center gap-2 px-5 py-3"
           >
             Select Industry
-          </button>
+          </button> */}
 
           {isOpen && (
             <div className="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white z-50">
