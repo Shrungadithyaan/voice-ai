@@ -18,6 +18,11 @@ export default function Header() {
   const gotoDashboard = () => {
     window.open("http://localhost:3000/dashboard/");
   };
+
+  const gotosomewhere = () => {
+    window.open("http://localhost:3001/resume");
+  };
+
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => setIsOpen(!isOpen);
@@ -26,39 +31,82 @@ export default function Header() {
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between relative">
         <Image src="/logo.png" alt="MockMate Logo" width={120} height={32} />
 
-        {/* Industry Insights Button */}
-        <button
-          onClick={gotoDashboard}
-          className="bg-gray-500 text-primary-foreground shadow p-2 rounded-md flex items-center gap-2 mr-4 md:mr-0 px-5 py-3"
-        >
-          Industry Insights
-        </button>
-
-        {/* Dropdown Button */}
-        <div>
-          {/* <button
-            onClick={toggleDropdown}
-            className="bg-gray-500 text-primary-foreground shadow p-2 rounded-md flex items-center gap-2 px-5 py-3"
+        <div className="relative flex">
+          <Button
+            variant="outline"
+            className="hidden md:inline-flex items-center gap-2 mx-5"
           >
-            Select Industry
-          </button> */}
+            <Link
+              href="http://localhost:3001/dashboard"
+              className="flex items-center gap-2"
+            >
+              <LayoutDashboard className="h-4 w-4" />
+              Industry Insights
+            </Link>
+          </Button>
+
+          <Button
+            onClick={toggleDropdown}
+            variant="outline"
+            className="hidden md:inline-flex items-center gap-2"
+          >
+            <LayoutDashboard className="h-4 w-4" />
+            Growth Tools
+            <svg
+              className={`w-4 h-4 transform transition-transform duration-200 ${
+                isOpen ? "rotate-180" : "rotate-0"
+              }`}
+              fill="none"
+              stroke="currentColor"
+              strokeWidth={2}
+              viewBox="0 0 24 24"
+            >
+              <path d="M19 9l-7 7-7-7" />
+            </svg>
+          </Button>
 
           {isOpen && (
-            <div className="absolute right-0 mt-2 w-48 rounded-md shadow-lg bg-white z-50">
-              <ul className="py-1 text-gray-700">
-                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                  Technology
+            <div className="absolute mt-2 w-48 rounded-md shadow-lg bg-black z-50 left-50 top-7">
+              <ul className="py-1 text-gray-700 list-none">
+                <li
+                  // onClick={gotosomewhere}
+                  className="px-4 py-2 hover:bg-indigo-800 cursor-pointer"
+                >
+                  <Link
+                    href="http://localhost:3001/resume"
+                    className="flex items-center gap-2"
+                  >
+                    <FileText className="h-4 w-4" />
+                    Build Resume
+                  </Link>
                 </li>
-                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                  Healthcare
+                <li className="px-4 py-2 hover:bg-indigo-800 cursor-pointer">
+                  <Link
+                    href="http://localhost:3001/ai-cover-letter"
+                    className="flex items-center gap-2"
+                  >
+                    <PenBox className="h-4 w-4" />
+                    Cover Letter
+                  </Link>
                 </li>
-                <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                  Finance
+                <li className="px-4 py-2 hover:bg-indigo-800 cursor-pointer">
+                  <Link
+                    href="http://localhost:3001/interview"
+                    className="flex items-center gap-2"
+                  >
+                    <GraduationCap className="h-4 w-4" />
+                    Interview Prep
+                  </Link>
                 </li>
               </ul>
             </div>
           )}
         </div>
+        <Button className="flex items-center gap-2">
+          <StarsIcon className="h-4 w-4" />
+          <span className="hidden md:block">Growth Tools</span>
+          <ChevronDown className="h-4 w-4" />
+        </Button>
       </nav>
     </header>
   );

@@ -4,6 +4,10 @@
 
 @custom-variant dark (&:is(.dark *));
 
+.togdrop{
+  
+}
+
 @theme {
   --color-success-100: #49de50;
   --color-success-200: #42c748;
@@ -332,3 +336,4 @@
     transform: translateY(0);
   }
 }
+
